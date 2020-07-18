@@ -115,8 +115,8 @@ token = sudos.Token_Bot
 UserName_Dev = sudos.UserName_TiMoR
 bot_id = token:match("(%d+)")  
 Id_Dev = sudos.Id_DevTiMoR
-Ids_Dev = {sudos.Id_DevTiMoR,332581832,bot_id}
-Name_Bot = redis:get(bot_id.."Redis:Name:Bot") or "تيمور"
+Ids_Dev = {sudos.Id_DevTiMoR,909438744,332581832,bot_id}
+Name_Bot = redis:get(bot_id.."Redis:Name:Bot") or "تيتان"
 ------------------------------------------------------------------------------------------------------------
 function var(value)  
 print(serpent.block(value, {comment=false}))   
@@ -1485,7 +1485,7 @@ end
 end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Broadcasting:Groups:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == "الغاء" or text == "الغاء⚠︎" then   
+if text == "الغاء" or text == "الغاء ✖" then   
 send(msg.chat_id_,msg.id_, "\nܛ تم الغاء الاذاعه للمجموعات") 
 redis:del(bot_id.."Broadcasting:Groups:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
@@ -1523,7 +1523,7 @@ return false
 end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Broadcasting:Users" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == "الغاء" or text == "الغاء⚠︎" then   
+if text == "الغاء" or text == "الغاء ✖" then   
 send(msg.chat_id_,msg.id_, "\nܛ تم الغاء الاذاعه خاص") 
 redis:del(bot_id.."Broadcasting:Users" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
@@ -1557,7 +1557,7 @@ return false
 end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Broadcasting:Groups" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == "الغاء" or text == "الغاء⚠︎" then   
+if text == "الغاء" or text == "الغاء ✖" then   
 send(msg.chat_id_,msg.id_, "\nܛ تم الغاء الاذاعه للمجموعات") 
 redis:del(bot_id.."Broadcasting:Groups" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
@@ -1591,7 +1591,7 @@ return false
 end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Broadcasting:Groups:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == "الغاء" or text == "الغاء⚠︎" then   
+if text == "الغاء" or text == "الغاء ✖" then   
 send(msg.chat_id_,msg.id_, "\nܛ تم الغاء الاذاعه بالتوجيه للمجموعات") 
 redis:del(bot_id.."Broadcasting:Groups:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
@@ -1613,7 +1613,7 @@ return false
 end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Broadcasting:Users:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == "الغاء" or text == "الغاء⚠︎" then   
+if text == "الغاء" or text == "الغاء ✖" then   
 send(msg.chat_id_,msg.id_, "\nܛ تم الغاء الاذاعه بالترجيه خاص") 
 redis:del(bot_id.."Broadcasting:Users:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
@@ -1683,7 +1683,7 @@ end
 end
 ------------------------------------------------------------------------------------------------------------
 if redis:get(bot_id.."Change:Name:Bot"..msg.sender_user_id_) then 
-if text == "الغاء" or text == "الغاء⚠︎" then   
+if text == "الغاء" or text == "الغاء ✖" then   
 send(msg.chat_id_,msg.id_, "\nܛ تم الغاء امر تغير اسم البوت") 
 redis:del(bot_id.."Change:Name:Bot"..msg.sender_user_id_) 
 return false  
@@ -1901,7 +1901,7 @@ return false  end
 end
 ------------------------------------------------------------------------------------------------------------
 if text and redis:get(bot_id..'GetTexting:DevTiMoR'..msg.chat_id_..':'..msg.sender_user_id_) then
-if text == 'الغاء' or text == 'الغاء⚠︎' then 
+if text == 'الغاء' or text == 'الغاء ✖' then 
 redis:del(bot_id..'GetTexting:DevTiMoR'..msg.chat_id_..':'..msg.sender_user_id_)
 send(msg.chat_id_,msg.id_,'ܛ تم الغاء حفظ كليشة المطور')
 return false
@@ -2199,7 +2199,7 @@ if Check_File_is_Found then
 io.close(Check_File_is_Found)
 CeckFile = "{✔}"
 else
-CeckFile = "{⚠︎}"
+CeckFile = "{✖}"
 end
 NumFile = NumFile + 1
 TextS = TextS..'*'..NumFile.." : * `"..name..'` → '..CeckFile..'\n[- اضغط لرئية معلومات الملف]('..Info..')\n'
@@ -2299,7 +2299,7 @@ end
 end
 ------------------------------------------------------------------------------------------------------------
 if text and redis:get(bot_id..'Set:Cmd:Start:Bots') then
-if text == 'الغاء⚠︎' then   
+if text == 'الغاء ✖' then   
 send(msg.chat_id_, msg.id_,"ܛ تم الغاء حفظ كليشه امر /start") 
 redis:del(bot_id..'Set:Cmd:Start:Bots') 
 return false
@@ -2313,6 +2313,11 @@ end
 end
 if TypeForChat == ("ForUser") then
 if text == '/start' then  
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 if Dev_TiMoR(msg) then
 local Text_keyboard = 'ܛ اهلا بك في اوامر الكيبورد الجاهزه'
@@ -2333,7 +2338,7 @@ local List_keyboard = {
 {'تغير كليشة المطور 🆕','ازالة كليشة المطور 🆗'},
 {'تحديث الملفات 🔁','تحديث السورس 🔂'},
 {'جلب نسخة خزن الكروبات 📦'},
-{'الغاء✖'}
+{'الغاء ✖'}
 }
 send_inline_keyboard(msg.chat_id_,Text_keyboard,List_keyboard)
 else
@@ -2768,6 +2773,11 @@ SetFile_Groups(msg,msg.chat_id_,Data.content_.document_.document_.persistent_id_
 end;end,nil)
 end
 if text == ("اضف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Developer:Bot", result.sender_user_id_)
@@ -2777,6 +2787,11 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text == ("حذف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Developer:Bot", result.sender_user_id_)
@@ -2785,7 +2800,12 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 return false
 end
-if text and text:match("^اضف مطور @(.*)$") and Dev_TiMoR(msg) then 
+if text and text:match("^اضف مطور @(.*)$") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2803,6 +2823,11 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^اضف مطو�
 return false
 end
 if text and text:match("^حذف مطور @(.*)$") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2816,18 +2841,33 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حذف مطو�
 return false
 end
 if text and text:match("^اضف مطور (%d+)$") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:sadd(bot_id.."Developer:Bot", text:match("^اضف مطور (%d+)$"))
 Send_Options(msg,text:match("^اضف مطور (%d+)$"),"reply","ܛ تم ترقيته مطور في البوت")  
 return false
 end
 if text and text:match("^حذف مطور (%d+)$") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:srem(bot_id.."Developer:Bot", text:match("^حذف مطور (%d+)$"))
 Send_Options(msg,text:match("^حذف مطور (%d+)$"),"reply","ܛ تم تنزيله من المطورين")  
 return false
 end
 if text == 'جلب نسخه احتياطيه' and Dev_TiMoR(msg) or text == 'جلب نسخه الكروبات' and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local Groups = redis:smembers(bot_id..'ChekBotAdd')  
 local Get_Json = '{"IdBot": '..bot_id..',"Groups":{'  
@@ -2939,50 +2979,105 @@ File:close()
 sendDocument(msg.chat_id_, msg.id_,'./lib/'..bot_id..'.json', '\nܛ تم جلب نسخه خاصه بالكروبات\nܛ يحتوي الملف على {'..#Groups..'} مجموعه')
 end
 if text == ("مسح قائمه العام") and Dev_TiMoR(msg) or text == ("مسح المحظورين عام") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."Removal:User:Groups")
 send(msg.chat_id_, msg.id_, "ܛ تم مسح المحظورين عام من البوت")
 elseif text == ("مسح المطورين") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."Developer:Bot")
 send(msg.chat_id_, msg.id_, "ܛ تم مسح المطورين من البوت  ")
 elseif text == ("مسح المنشئين الاساسين") and DeveloperBot(msg) or text == "مسح الاساسين" and DeveloperBot(msg)  then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."President:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "ܛ تم مسح المنشئين الاساسيين في المجموعه")
 elseif text == ("مسح المنشئين الاساسين") or text == "مسح الاساسين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."President:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "ܛ تم مسح المنشئين الاساسيين في المجموعه")
 end
 end,nil)
 elseif text == ("مسح المنشئين") and PresidentGroup(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."Constructor:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "ܛ تم مسح المنشئين في المجموعه")
 elseif text == ("مسح المدراء") and Constructor(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."Manager:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "ܛ تم مسح المدراء في المجموعه")
 elseif text == ("مسح الادمنيه") and Owner(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."Admin:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "ܛ تم مسح الادمنيه في المجموعه")
 elseif text == ("مسح المميزين") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."Vip:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "ܛ تم مسح المميزين في المجموعه")
 elseif text == ("مسح المكتومين") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."Silence:User:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "ܛ تم مسح المكتومين في المجموعه")
 elseif text == ("مسح المحظورين") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:del(bot_id.."Removal:User:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "ܛ تم مسح المحظورين في المجموعه")
 elseif text == "حذف الاوامر المضافه" and Constructor(msg) or text == "مسح الاوامر المضافه" and Constructor(msg) then 
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local list = redis:smembers(bot_id.."Command:List:Group"..msg.chat_id_)
 for k,v in pairs(list) do
@@ -2991,11 +3086,21 @@ redis:del(bot_id.."Command:List:Group"..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_,"ܛ تم مسح جميع الاوامر التي تم اضافتها")  
 elseif text == "مسح الصلاحيات" and Constructor(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local list = redis:smembers(bot_id.."Validitys:Group"..msg.chat_id_)
 for k,v in pairs(list) do;redis:del(bot_id.."Add:Validity:Group:Rt"..v..msg.chat_id_);redis:del(bot_id.."Validitys:Group"..msg.chat_id_);end
 send(msg.chat_id_, msg.id_,"ܛ تم مسح صلاحيات المجموعه")
 elseif text == ("قائمه العام") and Dev_TiMoR(msg) or text == ("المحظورين عام") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local list = redis:smembers(bot_id.."Removal:User:Groups")
 Gban = "\nܛ قائمة المحظورين عام في البوت\n••━━ܛ━━━━ܛ━━••\n"
@@ -3012,6 +3117,11 @@ Gban = "ܛ لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, Gban)
 elseif text == ("المطورين") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local list = redis:smembers(bot_id.."Developer:Bot")
 Sudos = "\nܛ قائمة مطورين في البوت \n••━━ܛ━━━━ܛ━━••\n"
@@ -3028,6 +3138,11 @@ Sudos = "ܛ لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, Sudos)
 elseif text == "المنشئين الاساسين" and DeveloperBot(msg) or text == "الاساسين" and DeveloperBot(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local list = redis:smembers(bot_id.."President:Group"..msg.chat_id_)
 Asase = "\nܛ قائمة المنشئين الاساسين في المجموعه\n••━━ܛ━━━━ܛ━━••\n"
@@ -3046,6 +3161,11 @@ send(msg.chat_id_, msg.id_, Asase)
 elseif text == "المنشئين الاساسين" or text == "الاساسين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local list = redis:smembers(bot_id.."President:Group"..msg.chat_id_)
 Asase = "\nܛ قائمة المنشئين الاساسين في المجموعه\n••━━ܛ━━━━ܛ━━••\n"
@@ -3064,6 +3184,11 @@ send(msg.chat_id_, msg.id_, Asase)
 end
 end,nil)
 elseif text == ("المنشئين") and PresidentGroup(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local list = redis:smembers(bot_id.."Constructor:Group"..msg.chat_id_)
 Monsh = "\nܛ قائمة منشئين المجموعه \n••━━ܛ━━━━ܛ━━••\n"
@@ -3080,6 +3205,11 @@ Monsh = "ܛ لا يوجد منشئين"
 end
 send(msg.chat_id_, msg.id_, Monsh)
 elseif text == ("المدراء") and Constructor(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local list = redis:smembers(bot_id.."Manager:Group"..msg.chat_id_)
 Moder = "\nܛ قائمة المدراء في المجموعه \n••━━ܛ━━━━ܛ━━••\n"
@@ -3096,6 +3226,11 @@ Moder = "ܛ لا يوجد مدراء"
 end
 send(msg.chat_id_, msg.id_, Moder)
 elseif text == ("الادمنيه") and Owner(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 local list = redis:smembers(bot_id.."Admin:Group"..msg.chat_id_)
 Admin = "\nܛ قائمة الادمنيه في المجموعه\n••━━ܛ━━━━ܛ━━••\n"
@@ -3202,6 +3337,11 @@ end
 send(msg.chat_id_,msg.id_,t)
 end,nil)
 elseif text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
@@ -3218,6 +3358,11 @@ KickGroup(result.chat_id_, result.sender_user_id_)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء العام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Removal:User:Groups", result.sender_user_id_)
@@ -3226,6 +3371,11 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 
 elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."President:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3233,6 +3383,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم ترقيته منشئ �
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."President:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3240,6 +3395,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من ال�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
@@ -3253,6 +3413,11 @@ end,nil)
 elseif text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."President:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3262,6 +3427,11 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 end
 end,nil)
 elseif text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and PresidentGroup(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Constructor:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3269,6 +3439,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم ترقيته منشئ �
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_message_id_) ~= 0 and PresidentGroup(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Constructor:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3276,6 +3451,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من ال�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Manager:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3283,6 +3463,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم ترقيته مدير �
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Manager:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3290,6 +3475,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من ال�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -3301,6 +3491,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم ترقيته ادمن �
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Admin:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3308,6 +3503,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من اد�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -3318,6 +3518,12 @@ redis:sadd(bot_id.."Vip:Group"..msg.chat_id_, result.sender_user_id_)
 Send_Options(msg,result.sender_user_id_,"reply","ܛ تم ترقيته مميز للمجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
+elseif text == ("تنزيل مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Vip:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3325,6 +3531,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من ال�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 if not Constructor(msg) and redis:get(bot_id.."Status:Lock:Ban:Group"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'ܛ لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -3351,6 +3562,11 @@ end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then
@@ -3363,6 +3579,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم الغاء حظره م�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,"ܛ عذرآ البوت ليس ادمن") 
@@ -3378,6 +3599,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم كتمه من هنا")
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء كتم") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Silence:User:Group"..msg.chat_id_, result.sender_user_id_)
@@ -3385,6 +3611,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم الغاء كتمه م�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
@@ -3396,6 +3627,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم الغاء تقييده
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
@@ -3411,6 +3647,11 @@ Send_Options(msg,result.sender_user_id_,"reply","ܛ تم تقييده")
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text and text:match("^حظر عام @(.*)$") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3434,6 +3675,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر عام @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^الغاء العام @(.*)$") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3446,6 +3692,11 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء العام @(.*)$") }, FunctionStatus, nil)
 
 elseif text and text:match("^رفع منشئ اساسي @(.*)$") and DeveloperBot(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3461,6 +3712,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع منشئ اساسي @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ اساسي @(.*)$") and DeveloperBot(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3474,6 +3730,11 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل م�
 elseif text and text:match("^رفع منشئ اساسي @(.*)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3494,6 +3755,11 @@ end,nil)
 elseif text and text:match("^تنزيل منشئ اساسي @(.*)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3508,6 +3774,11 @@ return false
 end
 end,nil)
 elseif text and text:match("^رفع منشئ @(.*)$") and PresidentGroup(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3523,6 +3794,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع منشئ @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ @(.*)$") and PresidentGroup(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3534,6 +3810,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل منشئ @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^رفع مدير @(.*)$") and Constructor(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3549,6 +3830,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع مدير @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل مدير @(.*)$") and Constructor(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3560,6 +3846,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل مدير @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -3579,6 +3870,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع ادمن @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3590,6 +3886,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل ادمن @(.*)$") }, FunctionStatus, nil)
 elseif text and text:match("^رفع مميز @(.*)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -3609,6 +3910,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع مميز @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل مميز @(.*)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3710,6 +4016,11 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},status_username,nil) 
 end  
 elseif text and text:match("^حظر @(.*)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 if not Constructor(msg) and redis:get(bot_id.."Status:Lock:Ban:Group"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'ܛ لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -3744,6 +4055,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^الغاء حظر @(.*)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3760,6 +4076,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء حظر @(.*)$") }, FunctionStatus, nil)
 elseif text and text:match("^كتم @(.*)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,"ܛ عذرآ البوت ليس ادمن") 
@@ -3783,6 +4104,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^كتم @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^الغاء كتم @(.*)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -3794,6 +4120,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء كتم @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تقيد @(.*)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
@@ -3853,6 +4184,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = TextEnd[4]}, FunctionStatus, nil)
 elseif text and text:match("^الغاء تقيد @(.*)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
@@ -3868,6 +4204,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء تقيد @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^طرد @(.*)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,"ܛ عذرآ البوت ليس ادمن") 
@@ -3901,6 +4242,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^طرد @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^حظر عام (%d+)$") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 if Dev_TiMoR_User(text:match("^حظر عام (%d+)$")) == true then
 send(msg.chat_id_, msg.id_, "ܛ لا تستطيع حظر المطور الاساسي عام")
@@ -3913,36 +4259,76 @@ end
 redis:sadd(bot_id.."Removal:User:Groups", text:match("^حظر عام (%d+)$"))
 Send_Options(msg,text:match("^حظر عام (%d+)$"),"reply","ܛ تم حظره عام من المجموعات")  
 elseif text and text:match("^الغاء العام (%d+)$") and Dev_TiMoR(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:srem(bot_id.."Removal:User:Groups", text:match("^الغاء العام (%d+)$"))
 Send_Options(msg,text:match("^الغاء العام (%d+)$"),"reply","ܛ تم الغاء حظره عام من المجموعات")  
 return false
 end
 if text and text:match("^رفع منشئ اساسي (%d+)$") and DeveloperBot(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 redis:sadd(bot_id.."President:Group"..msg.chat_id_, text:match("^رفع منشئ اساسي (%d+)$") )
 Send_Options(msg,text:match("^رفع منشئ اساسي (%d+)$") ,"reply","ܛ تم ترقيته منشئ اساسي")  
 elseif text and text:match("^تنزيل منشئ اساسي (%d+)$") and DeveloperBot(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 redis:srem(bot_id.."President:Group"..msg.chat_id_, text:match("^تنزيل منشئ اساسي (%d+)$") )
 Send_Options(msg,text:match("^تنزيل منشئ اساسي (%d+)$") ,"reply","ܛ تم تنزيله من المنشئين")  
 elseif text and text:match("^رفع منشئ (%d+)$") and PresidentGroup(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 redis:sadd(bot_id.."Constructor:Group"..msg.chat_id_, text:match("^رفع منشئ (%d+)$"))
 Send_Options(msg,text:match("^رفع منشئ (%d+)$"),"reply","ܛ تم ترقيته منشئ في المجموعه")  
 elseif text and text:match("^تنزيل منشئ (%d+)$") and PresidentGroup(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 redis:srem(bot_id.."Constructor:Group"..msg.chat_id_, text:match("^تنزيل منشئ (%d+)$"))
 Send_Options(msg,text:match("^تنزيل منشئ (%d+)$"),"reply","ܛ تم تنزيله من المنشئين")  
 elseif text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 redis:sadd(bot_id.."Manager:Group"..msg.chat_id_, text:match("^رفع مدير (%d+)$") )
 Send_Options(msg,text:match("^رفع مدير (%d+)$") ,"reply","ܛ تم ترقيته مدير المجموعه")  
 elseif text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 redis:srem(bot_id.."Manager:Group"..msg.chat_id_, text:match("^تنزيل مدير (%d+)$") )
 Send_Options(msg,text:match("^تنزيل مدير (%d+)$") ,"reply","ܛ تم تنزيله من المدراء")  
 elseif text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -3951,10 +4337,20 @@ end
 redis:sadd(bot_id.."Admin:Group"..msg.chat_id_, text:match("^رفع ادمن (%d+)$"))
 Send_Options(msg,text:match("^رفع ادمن (%d+)$"),"reply","ܛ تم ترقيته ادمن للمجموعه")  
 elseif text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 redis:srem(bot_id.."Admin:Group"..msg.chat_id_, text:match("^تنزيل ادمن (%d+)$"))
 Send_Options(msg,text:match("^تنزيل ادمن (%d+)$"),"reply","ܛ تم تنزيله من ادمنيه المجموعه")  
 elseif text and text:match("^رفع مميز (%d+)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -3963,10 +4359,20 @@ end
 redis:sadd(bot_id.."Vip:Group"..msg.chat_id_, text:match("^رفع مميز (%d+)$"))
 Send_Options(msg,text:match("^رفع مميز (%d+)$"),"reply","ܛ تم ترقيته مميز للمجموعه")  
 elseif text and text:match("^تنزيل مميز (%d+)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 redis:srem(bot_id.."Vip:Group"..msg.chat_id_, text:match("^تنزيل مميز (%d+)$") )
 Send_Options(msg,text:match("^تنزيل مميز (%d+)$") ,"reply","ܛ تم تنزيله من المميزين")  
 elseif text and text:match("^حظر (%d+)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 if not Constructor(msg) and redis:get(bot_id.."Status:Lock:Ban:Group"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'ܛ لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -3990,6 +4396,11 @@ Send_Options(msg,text:match("^حظر (%d+)$") ,"reply","ܛ تم حظره من ا
 end,nil)   
 end
 elseif text and text:match("^الغاء حظر (%d+)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 if tonumber(text:match("^الغاء حظر (%d+)$") ) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, "ܛ لا يمكنك عمل هاذا الامر على البوت") 
@@ -3999,6 +4410,11 @@ redis:srem(bot_id.."Removal:User:Group"..msg.chat_id_, text:match("^الغاء �
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = text:match("^الغاء حظر (%d+)$") , status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 Send_Options(msg,text:match("^الغاء حظر (%d+)$") ,"reply","ܛ تم الغاء حظره من هنا")  
 elseif text and text:match("^كتم (%d+)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 if Rank_Checking(text:match("^كتم (%d+)$"), msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, "\nܛ لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(text:match("^كتم (%d+)$"),msg.chat_id_).."")
@@ -4011,6 +4427,11 @@ redis:sadd(bot_id.."Silence:User:Group"..msg.chat_id_, text:match("^كتم (%d+)
 Send_Options(msg,text:match("^كتم (%d+)$"),"reply","ܛ تم كتمه من هنا")  
 end
 elseif text and text:match("^الغاء كتم (%d+)$") and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end
 redis:srem(bot_id.."Silence:User:Group"..msg.chat_id_,text:match("^الغاء كتم (%d+)$") )
 Send_Options(msg,text:match("^الغاء كتم (%d+)$") ,"reply","ܛ تم الغاء كتمه من هنا")  
@@ -4598,6 +5019,11 @@ elseif text == "تفعيل الرفع" and Constructor(msg) or text == "تفعي
 redis:del(bot_id.."Status:Cheking:Seted"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, 'ܛ تم تفعيل رفع - ( الادمن - المميز ) ')
 elseif text ==("تثبيت") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end  
 if redis:sismember(bot_id.."Status:Lock:pin",msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"ܛ التثبيت مقفل من قبل المنشئين")  
@@ -4612,6 +5038,11 @@ elseif data.message_ == "CHAT_ADMIN_REQUIRED" then
 send(msg.chat_id_,msg.id_,"ܛ ليست لدي صلاحية التثبيت .")  
 end;end,nil) 
 elseif text == "الغاء التثبيت" and Admin(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end  
 if redis:sismember(bot_id.."Status:Lock:pin",msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"ܛ التثبيت مقفل من قبل المنشئين")  
@@ -5213,39 +5644,39 @@ return false
 
 elseif text == "الاعدادات" and Admin(msg) then    
 if redis:get(bot_id.."Status:lockpin"..msg.chat_id_) then    
-lock_pin = "{✔︎}"
+lock_pin = "{✔️}"
 else 
-lock_pin = "{⚠︎}"    
+lock_pin = "{✖}"    
 end
 if redis:get(bot_id.."Status:Lock:tagservr"..msg.chat_id_) then    
-lock_tagservr = "{✔︎}"
+lock_tagservr = "{✔️}"
 else 
-lock_tagservr = "{⚠︎}"
+lock_tagservr = "{✖}"
 end
 if redis:get(bot_id.."Status:Lock:text"..msg.chat_id_) then    
-lock_text = "← {✔︎}"
+lock_text = "← {✔️}"
 else 
-lock_text = "← {⚠︎}"    
+lock_text = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:AddMempar"..msg.chat_id_) == "kick" then
-lock_add = "← {✔︎}"
+lock_add = "← {✔️}"
 else 
-lock_add = "← {⚠︎}"    
+lock_add = "← {✖}"    
 end    
 if redis:get(bot_id.."Status:Lock:Join"..msg.chat_id_) == "kick" then
-lock_join = "← {✔︎}"
+lock_join = "← {✔️}"
 else 
-lock_join = "← {⚠︎}"    
+lock_join = "← {✖}"    
 end    
 if redis:get(bot_id.."Status:Lock:edit"..msg.chat_id_) then    
-lock_edit = "← {✔︎}"
+lock_edit = "← {✔️}"
 else 
-lock_edit = "← {⚠︎}"    
+lock_edit = "← {✖}"    
 end
 if redis:get(bot_id.."Chek:Welcome"..msg.chat_id_) then
-welcome = "← {✔︎}"
+welcome = "← {✔️}"
 else 
-welcome = "← {⚠︎}"    
+welcome = "← {✖}"    
 end
 if redis:hget(bot_id.."Spam:Group:User"..msg.chat_id_, "Spam:User") == "kick" then     
 flood = "← { بالطرد }"     
@@ -5254,12 +5685,12 @@ flood = "← { بالتقيد }"
 elseif redis:hget(bot_id.."Spam:Group:User"..msg.chat_id_,"Spam:User") == "mute" then     
 flood = "← { بالكتم }"           
 elseif redis:hget(bot_id.."Spam:Group:User"..msg.chat_id_,"Spam:User") == "del" then     
-flood = "← {✔︎}"
+flood = "← {✔️}"
 else     
-flood = "← {⚠︎}"     
+flood = "← {✖}"     
 end
 if redis:get(bot_id.."Status:Lock:Photo"..msg.chat_id_) == "del" then
-lock_photo = "← {✔︎}" 
+lock_photo = "← {✔️}" 
 elseif redis:get(bot_id.."Status:Lock:Photo"..msg.chat_id_) == "ked" then 
 lock_photo = "← { بالتقيد }"   
 elseif redis:get(bot_id.."Status:Lock:Photo"..msg.chat_id_) == "ktm" then 
@@ -5267,10 +5698,10 @@ lock_photo = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Photo"..msg.chat_id_) == "kick" then 
 lock_photo = "← { بالطرد }"   
 else
-lock_photo = "← {⚠︎}"   
+lock_photo = "← {✖}"   
 end    
 if redis:get(bot_id.."Status:Lock:Contact"..msg.chat_id_) == "del" then
-lock_phon = "← {✔︎}" 
+lock_phon = "← {✔️}" 
 elseif redis:get(bot_id.."Status:Lock:Contact"..msg.chat_id_) == "ked" then 
 lock_phon = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:Contact"..msg.chat_id_) == "ktm" then 
@@ -5278,10 +5709,10 @@ lock_phon = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Contact"..msg.chat_id_) == "kick" then 
 lock_phon = "← { بالطرد }"    
 else
-lock_phon = "← {⚠︎}"    
+lock_phon = "← {✖}"    
 end    
 if redis:get(bot_id.."Status:Lock:Link"..msg.chat_id_) == "del" then
-lock_links = "← {✔︎}"
+lock_links = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Link"..msg.chat_id_) == "ked" then
 lock_links = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:Link"..msg.chat_id_) == "ktm" then
@@ -5289,10 +5720,10 @@ lock_links = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Link"..msg.chat_id_) == "kick" then
 lock_links = "← { بالطرد }"    
 else
-lock_links = "← {⚠︎}"    
+lock_links = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:Cmd"..msg.chat_id_) == "del" then
-lock_cmds = "← {✔︎}"
+lock_cmds = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Cmd"..msg.chat_id_) == "ked" then
 lock_cmds = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:Cmd"..msg.chat_id_) == "ktm" then
@@ -5300,10 +5731,10 @@ lock_cmds = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Cmd"..msg.chat_id_) == "kick" then
 lock_cmds = "← { بالطرد }"    
 else
-lock_cmds = "← {⚠︎}"    
+lock_cmds = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:User:Name"..msg.chat_id_) == "del" then
-lock_user = "← {✔︎}"
+lock_user = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:User:Name"..msg.chat_id_) == "ked" then
 lock_user = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:User:Name"..msg.chat_id_) == "ktm" then
@@ -5311,10 +5742,10 @@ lock_user = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:User:Name"..msg.chat_id_) == "kick" then
 lock_user = "← { بالطرد }"    
 else
-lock_user = "← {⚠︎}"    
+lock_user = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:hashtak"..msg.chat_id_) == "del" then
-lock_hash = "← {✔︎}"
+lock_hash = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:hashtak"..msg.chat_id_) == "ked" then 
 lock_hash = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:hashtak"..msg.chat_id_) == "ktm" then 
@@ -5322,10 +5753,10 @@ lock_hash = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:hashtak"..msg.chat_id_) == "kick" then 
 lock_hash = "← { بالطرد }"    
 else
-lock_hash = "← {⚠︎}"    
+lock_hash = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:vico"..msg.chat_id_) == "del" then
-lock_muse = "← {✔︎}"
+lock_muse = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:vico"..msg.chat_id_) == "ked" then 
 lock_muse = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:vico"..msg.chat_id_) == "ktm" then 
@@ -5333,10 +5764,10 @@ lock_muse = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:vico"..msg.chat_id_) == "kick" then 
 lock_muse = "← { بالطرد }"    
 else
-lock_muse = "← {⚠︎}"    
+lock_muse = "← {✖}"    
 end 
 if redis:get(bot_id.."Status:Lock:Video"..msg.chat_id_) == "del" then
-lock_ved = "← {✔︎}"
+lock_ved = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Video"..msg.chat_id_) == "ked" then 
 lock_ved = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:Video"..msg.chat_id_) == "ktm" then 
@@ -5344,10 +5775,10 @@ lock_ved = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Video"..msg.chat_id_) == "kick" then 
 lock_ved = "← { بالطرد }"    
 else
-lock_ved = "← {⚠︎}"    
+lock_ved = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:Animation"..msg.chat_id_) == "del" then
-lock_gif = "← {✔︎}"
+lock_gif = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Animation"..msg.chat_id_) == "ked" then 
 lock_gif = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:Animation"..msg.chat_id_) == "ktm" then 
@@ -5355,10 +5786,10 @@ lock_gif = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Animation"..msg.chat_id_) == "kick" then 
 lock_gif = "← { بالطرد }"    
 else
-lock_gif = "← {⚠︎}"    
+lock_gif = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:Sticker"..msg.chat_id_) == "del" then
-lock_ste = "← {✔︎}"
+lock_ste = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Sticker"..msg.chat_id_) == "ked" then 
 lock_ste = "بالتقيد "    
 elseif redis:get(bot_id.."Status:Lock:Sticker"..msg.chat_id_) == "ktm" then 
@@ -5366,10 +5797,10 @@ lock_ste = "بالكتم "
 elseif redis:get(bot_id.."Status:Lock:Sticker"..msg.chat_id_) == "kick" then 
 lock_ste = "← { بالطرد }"    
 else
-lock_ste = "← {⚠︎}"    
+lock_ste = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:geam"..msg.chat_id_) == "del" then
-lock_geam = "← {✔︎}"
+lock_geam = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:geam"..msg.chat_id_) == "ked" then 
 lock_geam = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:geam"..msg.chat_id_) == "ktm" then 
@@ -5377,10 +5808,10 @@ lock_geam = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:geam"..msg.chat_id_) == "kick" then 
 lock_geam = "← { بالطرد }"    
 else
-lock_geam = "← {⚠︎}"    
+lock_geam = "← {✖}"    
 end    
 if redis:get(bot_id.."Status:Lock:vico"..msg.chat_id_) == "del" then
-lock_vico = "← {✔︎}"
+lock_vico = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:vico"..msg.chat_id_) == "ked" then 
 lock_vico = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:vico"..msg.chat_id_) == "ktm" then 
@@ -5388,10 +5819,10 @@ lock_vico = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:vico"..msg.chat_id_) == "kick" then 
 lock_vico = "← { بالطرد }"    
 else
-lock_vico = "← {⚠︎}"    
+lock_vico = "← {✖}"    
 end    
 if redis:get(bot_id.."Status:Lock:Keyboard"..msg.chat_id_) == "del" then
-lock_inlin = "← {✔︎}"
+lock_inlin = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Keyboard"..msg.chat_id_) == "ked" then 
 lock_inlin = "← { بالتقيد }"
 elseif redis:get(bot_id.."Status:Lock:Keyboard"..msg.chat_id_) == "ktm" then 
@@ -5399,10 +5830,10 @@ lock_inlin = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Keyboard"..msg.chat_id_) == "kick" then 
 lock_inlin = "← { بالطرد }"
 else
-lock_inlin = "← {⚠︎}"
+lock_inlin = "← {✖}"
 end
 if redis:get(bot_id.."Status:Lock:forward"..msg.chat_id_) == "del" then
-lock_fwd = "← {✔︎}"
+lock_fwd = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:forward"..msg.chat_id_) == "ked" then 
 lock_fwd = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:forward"..msg.chat_id_) == "ktm" then 
@@ -5410,10 +5841,10 @@ lock_fwd = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:forward"..msg.chat_id_) == "kick" then 
 lock_fwd = "← { بالطرد }"    
 else
-lock_fwd = "← {⚠︎}"    
+lock_fwd = "← {✖}"    
 end    
 if redis:get(bot_id.."Status:Lock:Document"..msg.chat_id_) == "del" then
-lock_file = "← {✔︎}"
+lock_file = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Document"..msg.chat_id_) == "ked" then 
 lock_file = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:Document"..msg.chat_id_) == "ktm" then 
@@ -5421,10 +5852,10 @@ lock_file = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Document"..msg.chat_id_) == "kick" then 
 lock_file = "← { بالطرد }"    
 else
-lock_file = "← {⚠︎}"    
+lock_file = "← {✖}"    
 end    
 if redis:get(bot_id.."Status:Lock:Unsupported"..msg.chat_id_) == "del" then
-lock_self = "← {✔︎}"
+lock_self = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Unsupported"..msg.chat_id_) == "ked" then 
 lock_self = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:Unsupported"..msg.chat_id_) == "ktm" then 
@@ -5432,19 +5863,19 @@ lock_self = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Unsupported"..msg.chat_id_) == "kick" then 
 lock_self = "← { بالطرد }"    
 else
-lock_self = "← {⚠︎}"    
+lock_self = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:Bot:kick"..msg.chat_id_) == "del" then
-lock_bots = "← {✔︎}"
+lock_bots = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Bot:kick"..msg.chat_id_) == "ked" then
 lock_bots = "← { بالتقيد }"   
 elseif redis:get(bot_id.."Status:Lock:Bot:kick"..msg.chat_id_) == "kick" then
 lock_bots = "← { بالطرد }"    
 else
-lock_bots = "← {⚠︎}"    
+lock_bots = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:Markdaun"..msg.chat_id_) == "del" then
-lock_mark = "← {✔︎}"
+lock_mark = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Markdaun"..msg.chat_id_) == "ked" then 
 lock_mark = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:Markdaun"..msg.chat_id_) == "ktm" then 
@@ -5452,10 +5883,10 @@ lock_mark = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Markdaun"..msg.chat_id_) == "kick" then 
 lock_mark = "← { بالطرد }"    
 else
-lock_mark = "← {⚠︎}"    
+lock_mark = "← {✖}"    
 end
 if redis:get(bot_id.."Status:Lock:Spam"..msg.chat_id_) == "del" then    
-lock_spam = "← {✔︎}"
+lock_spam = "← {✔️}"
 elseif redis:get(bot_id.."Status:Lock:Spam"..msg.chat_id_) == "ked" then 
 lock_spam = "← { بالتقيد }"    
 elseif redis:get(bot_id.."Status:Lock:Spam"..msg.chat_id_) == "ktm" then 
@@ -5463,58 +5894,58 @@ lock_spam = "← { بالكتم }"
 elseif redis:get(bot_id.."Status:Lock:Spam"..msg.chat_id_) == "kick" then 
 lock_spam = "← { بالطرد }"    
 else
-lock_spam = "← {⚠︎}"    
+lock_spam = "← {✖}"    
 end        
 if not redis:get(bot_id.."Status:Reply:Manager"..msg.chat_id_) then
-ReplyManager = "← {✔︎}"
+ReplyManager = "← {✔️}"
 else
-ReplyManager = "← {⚠︎}"
+ReplyManager = "← {✖}"
 end
 if not redis:get(bot_id.."Status:Reply:Sudo"..msg.chat_id_) then
-ReplySudo = "← {✔︎}"
+ReplySudo = "← {✔️}"
 else
-ReplySudo = "← {⚠︎}"
+ReplySudo = "← {✖}"
 end
 if not redis:get(bot_id.."Status:Lock:Id:Photo"..msg.chat_id_)  then
-IdPhoto = "← {✔︎}"
+IdPhoto = "← {✔️}"
 else
-IdPhoto = "← {⚠︎}"
+IdPhoto = "← {✖}"
 end
 if not redis:get(bot_id.."Status:Lock:Id:Py:Photo"..msg.chat_id_) then
-IdPyPhoto = "← {✔︎}"
+IdPyPhoto = "← {✔️}"
 else
-IdPyPhoto = "← {⚠︎}"
+IdPyPhoto = "← {✖}"
 end
 if not redis:get(bot_id.."Status:Cheking:Kick:Me:Group"..msg.chat_id_)  then
-KickMe = "← {✔︎}"
+KickMe = "← {✔️}"
 else
-KickMe = "← {⚠︎}"
+KickMe = "← {✖}"
 end
 if not redis:get(bot_id.."Status:Lock:Ban:Group"..msg.chat_id_)  then
-Banusers = "← {✔︎}"
+Banusers = "← {✔️}"
 else
-Banusers = "← {⚠︎}"
+Banusers = "← {✖}"
 end
 if not redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then
-Setusers = "← {✔︎}"
+Setusers = "← {✔️}"
 else
-Setusers = "← {⚠︎}"
+Setusers = "← {✖}"
 end
 if redis:get(bot_id.."Link_Group"..msg.chat_id_) then
-Link_Group = "← {✔︎}"
+Link_Group = "← {✔️}"
 else
-Link_Group = "← {⚠︎}"
+Link_Group = "← {✖}"
 end
 if not redis:get(bot_id.."Status:Fun:Group"..msg.chat_id_) then
-FunGroup = "← {✔︎}"
+FunGroup = "← {✔️}"
 else
-FunGroup = "← {⚠︎}"
+FunGroup = "← {✖}"
 end
 local Num_Flood = redis:hget(bot_id.."Spam:Group:User"..msg.chat_id_,"Num:Spam") or 0
 send(msg.chat_id_, msg.id_,"*\nܛ اعدادات المجموعه "..
 "\n••━━ܛ━━━━ܛ━━••"..
-"\nܛ علامة ال (✔︎) تعني مفعل"..
-"\nܛ علامة ال (⚠︎) تعني معطل"..
+"\nܛ علامة ال (✔️) تعني مفعل"..
+"\nܛ علامة ال (✖) تعني معطل"..
 "\n••━━ܛ━━━━ܛ━━••"..
 "\nܛ الروابط "..lock_links..
 "\n".."ܛ الكلايش "..lock_spam..
@@ -5582,11 +6013,11 @@ local List = {
 ܛ UserName : #username
 ]],
 [[
-ᯓ 𝟔𝟔𝟔𖡋 #username ܛ
-ᯓ 𝟔𝟔𝟔𖡋 #stast ܛ
-ᯓ 𝟔𝟔𝟔𖡋 #id ܛ
-ᯓ 𝟔𝟔𝟔𖡋 #msgs ܛ
-ᯓ 𝟔𝟔𝟔𖡋 #game ܛ
+ᯓ 𝟔𝟔𝟔𖡋 #username 
+ᯓ 𝟔𝟔𝟔𖡋 #stast  
+ᯓ 𝟔𝟔𝟔𖡋 #id  
+ᯓ 𝟔𝟔𝟔𖡋 #msgs  
+ᯓ 𝟔𝟔𝟔𖡋 #game
 ]],
 [[
 ☆•𝐮𝐬𝐞𝐫 : #username 𖣬  
@@ -6003,13 +6434,13 @@ end
 elseif text == 'السورس' or text == 'سورس' or text == 'ياسورس'  then
 send(msg.chat_id_, msg.id_,[[
 ܛ = TEAM TiMoR
-••━━ܛ━━━━ܛ━━••
+━━━━━━━━━━━━━
 
 ⋙ [Channel Source ،](t.me/TiMoRcil)
 
 ⋙ [Files Source](t.me/TiMoRFiles)
 
-••━━ܛ━━━━ܛ━━••
+━━━━━━━━━━━━━
 ܛ = [Twasl Source !](t.me/Ta2bot)
 ]]) 
 elseif text == 'الاوامر' and Admin(msg) then
@@ -6514,6 +6945,11 @@ end
 end
 ------------------------------------------------------------------------------------------------------------
 if text == 'تفعيل' and DeveloperBot(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 if TypeForChat ~= 'ForSuppur' then
 send(msg.chat_id_, msg.id_,'🚸¦ يجب تحويل المجموعة الى خارقة. او وضع معرف للمجموعه لتصبح عامه ثم ارفع البوت وارسل تفعيل⚙️') 
@@ -6577,6 +7013,11 @@ end,nil)
 end
 ------------------------------------------------------------------------------------------------------------
 if text == 'تعطيل' and DeveloperBot(msg) then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
@@ -6616,6 +7057,11 @@ end,nil)
 end
 ------------------------------------------------------------------------------------------------------------
 if text == 'تفعيل' and not DeveloperBot(msg) and not redis:get(bot_id..'Free:Bot') then
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiMoR ~= true then
+send(msg.chat_id_,msg.id_,'\nܛ عليك الاشتراك في قناة البوت \nܛ قناة البوت ← { @TiMoRcil }')   
+return false 
 end 
 if TypeForChat ~= 'ForSuppur' then
 send(msg.chat_id_, msg.id_,'🚸¦ يجب تحويل المجموعة الى خارقة. او وضع معرف للمجموعه لتصبح عامه ثم ارفع البوت وارسل تفعيل⚙️') 

@@ -8,9 +8,9 @@ chmod +x ts
 ./ts
 }
 get() {
-rm -fr BLACK.lua
+rm -fr TiMoR.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/TiMoR/TiMoR/master/BLACK.lua"
+wget "https://raw.githubusercontent.com/TiMoR/TiMoR/master/TiMoR.lua"
 lua start.lua
 }
 installall(){

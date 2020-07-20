@@ -16,7 +16,14 @@ print("\27[34m"..[[
 
 ⋙ Best Source in Telegram
 ⋙ Features fast and powerful
+‌‌‎ _____ _ __  __       ____  
+|_   _(_)  \/  | ___ |  _ \ 
+  | | | | |\/| |/ _ \| |_) |
+  | | | | |  | | (_) |  _ < 
+  |_| |_|_|  |_|\___/|_| \_\
 
+⋙ Thanks to the use of your source
+⋙ TiMoR TEAM Dev: @VlVlVI
 
 ]].."\27[m")
 
@@ -460,15 +467,15 @@ message = 'متفاعل قوي 𓅓'
 elseif tonumber(msgs) < 2000 then 
 message = 'متفاعل جدا ♧︎︎︎' 
 elseif tonumber(msgs) < 3500 then 
-message = 'اقوى تفاعل ☂︎'  
+message = 'اقوى تفاعل ☆'  
 elseif tonumber(msgs) < 4000 then 
-message = 'متفاعل نار ☕︎' 
+message = 'متفاعل نار 𖧷' 
 elseif tonumber(msgs) < 4500 then 
 message = 'قمة التفاعل 𖠌' 
 elseif tonumber(msgs) < 5500 then 
-message = 'اقوى متفاعل ☃︎' 
+message = 'اقوى متفاعل ⍟' 
 elseif tonumber(msgs) < 7000 then 
-message = 'ملك التفاعل ✌︎' 
+message = 'ملك التفاعل 𐂂' 
 elseif tonumber(msgs) < 9500 then 
 message = 'امبروطور التفاعل 𓀡' 
 elseif tonumber(msgs) < 10000000000 then 

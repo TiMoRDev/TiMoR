@@ -472,7 +472,7 @@ message = 'ملك التفاعل ✌︎'
 elseif tonumber(msgs) < 9500 then 
 message = 'امبروطور التفاعل 𓀡' 
 elseif tonumber(msgs) < 10000000000 then 
-message = 'رب التفاعل ☘︎'  
+message = 'رب التفاعل ✪'  
 end 
 return message 
 end
@@ -2321,33 +2321,31 @@ return false
 end
 if text == ("المطورين") and DevTiMoRDev(msg) then
 local list = database:smembers(bot_id.."TiMoRDev:Sudo:User")
-t = "\nܛ قائمة مطورين البوت \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
+t = "\n*𓍯 ܛ قائمة مطورين البوت* \n𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiMoRDev:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t.."𓍯"..k.."⋙ ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "ܛ لا يوجد مطورين"
+t = "*𓍯 ܛ لا يوجد مطورين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == "المنشئين الاساسين" and DevBot(msg) then
 local list = database:smembers(bot_id.."TiMoRDev:Basic:Constructor"..msg.chat_id_)
-t = "\nܛ قائمة المنشئين الاساسين \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
+t = "\n*𓍯 ܛ قائمة المنشئين الاساسين* \n𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiMoRDev:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t.."𓍯"..k.."⋙ ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "ܛ لا يوجد منشئين اساسيين"
+t = "*𓍯 ܛ لا يوجد منشئين اساسيين*"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -2358,22 +2356,21 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local list = database:smembers(bot_id.."TiMoRDev:Constructor"..msg.chat_id_)
-t = "\nܛ قائمة المنشئين \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
+t = "\n*𓍯 ܛ قائمة المنشئين* \n𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiMoRDev:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t.."𓍯"..k.."⋙ ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "ܛ لا يوجد منشئين"
+t = "*𓍯 ܛ لا يوجد منشئين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2383,22 +2380,21 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local list = database:smembers(bot_id.."TiMoRDev:Manager"..msg.chat_id_)
-t = "\nܛ قائمة المدراء \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
+t = "\n*𓍯 ܛ قائمة المدراء* \n𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiMoRDev:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t.."𓍯"..k.."⋙ ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "ܛ لا يوجد مدراء"
+t = "*𓍯 ܛ لا يوجد مدراء*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2408,38 +2404,36 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local list = database:smembers(bot_id.."TiMoRDev:Mod:User"..msg.chat_id_)
-t = "\nܛ قائمة الادمنيه \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
+t = "\n*𓍯 ܛ قائمة الادمنيه* \n𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiMoRDev:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t.."𓍯"..k.."⋙ ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "ܛ لا يوجد ادمنيه"
+t = "*𓍯 ܛ لا يوجد ادمنيه*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المميزين") and Addictive(msg) then
 local list = database:smembers(bot_id.."TiMoRDev:Special:User"..msg.chat_id_)
-t = "\nܛ قائمة مميزين المجموعه \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
+t = "\n*𓍯 ܛ قائمة مميزين المجموعه* \n𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiMoRDev:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t.."𓍯"..k.."⋙ ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "ܛ لا يوجد مميزين"
+t = "*𓍯 ܛ لا يوجد مميزين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2449,22 +2443,21 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local list = database:smembers(bot_id.."TiMoRDev:Muted:User"..msg.chat_id_)
-t = "\nܛ قائمة المكتومين \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
+t = "\n*𓍯 ܛ قائمة المكتومين* \n𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiMoRDev:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t.."𓍯"..k.."⋙ ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "ܛ لا يوجد مكتومين"
+t = "*𓍯 ܛ لا يوجد مكتومين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2475,22 +2468,21 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local list = database:smembers(bot_id.."TiMoRDev:Ban:User"..msg.chat_id_)
-t = "\nܛ قائمة محظورين المجموعه \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
+t = "\n*𓍯 ܛ قائمة محظورين المجموعه *\n𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳⠤⠤⠤𖣳\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiMoRDev:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t.."𓍯"..k.."⋙ ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "ܛ لا يوجد محظورين"
+t = "*𓍯 ܛ لا يوجد محظورين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2498,16 +2490,16 @@ end
 if text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and DevTiMoRDev(msg) then
 function Function_TiMoRDev(extra, result, success)
 if result.sender_user_id_ == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "ܛ لا يمكنك حظر المطور الاساسي \n")
+send(msg.chat_id_, msg.id_, "*𓍯 ܛ لا يمكنك حظر المطور الاساسي* \n")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "ܛ لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "*𓍯 ܛ لا تسطيع حظر البوت عام*")
 return false 
 end
 database:sadd(bot_id.."TiMoRDev:GBan:User", result.sender_user_id_)
 Kick_Group(result.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم حظره عام من المجموعات")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم حظره عام من المجموعات*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -2517,21 +2509,21 @@ local username = text:match("^حظر عام @(.*)$")
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"*ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه *")   
 return false 
 end      
 if tonumber(result.id_) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "ܛ لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "*𓍯 ܛ لا تسطيع حظر البوت عام*")
 return false 
 end
 if result.id_ == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "ܛ لا يمكنك حظر المطور الاساسي \n")
+send(msg.chat_id_, msg.id_, "*𓍯 ܛ لا يمكنك حظر المطور الاساسي* \n")
 return false 
 end
 database:sadd(bot_id.."TiMoRDev:GBan:User", result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم حظره عام من المجموعات")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم حظره عام من المجموعات*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2540,21 +2532,21 @@ end
 if text and text:match("^حظر عام (%d+)$") and DevTiMoRDev(msg) then
 local userid = text:match("^حظر عام (%d+)$")
 if userid == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "ܛ لا يمكنك حظر المطور الاساسي \n")
+send(msg.chat_id_, msg.id_, "*𓍯 ܛ لا يمكنك حظر المطور الاساسي *\n")
 return false 
 end
 if tonumber(userid) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "ܛ لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "*𓍯 ܛ لا تسطيع حظر البوت عام*")
 return false 
 end
 database:sadd(bot_id.."TiMoRDev:GBan:User", userid)
-Reply_Status(msg,userid,"reply","ܛ تم حظره عام من المجموعات")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم حظره عام من المجموعات*")  
 return false
 end
 if text == ("الغاء العام") and tonumber(msg.reply_to_message_id_) ~= 0 and DevTiMoRDev(msg) then
 function Function_TiMoRDev(extra, result, success)
 database:srem(bot_id.."TiMoRDev:GBan:User", result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم الغاء حظره عام من المجموعات")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم الغاء حظره عام من المجموعات*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -2563,10 +2555,10 @@ if text and text:match("^الغاء العام @(.*)$") and DevTiMoRDev(msg) the
 local username = text:match("^الغاء العام @(.*)$") 
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
-Reply_Status(msg,result.id_,"reply","ܛ تم الغاء حظره عام من المجموعات")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم الغاء حظره عام من المجموعات*")  
 database:srem(bot_id.."TiMoRDev:GBan:User", result.id_)
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2575,14 +2567,14 @@ end
 if text and text:match("^الغاء العام (%d+)$") and DevTiMoRDev(msg) then
 local userid = text:match("^الغاء العام (%d+)$")
 database:srem(bot_id.."TiMoRDev:GBan:User", userid)
-Reply_Status(msg,userid,"reply","ܛ تم الغاء حظره عام من المجموعات")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم الغاء حظره عام من المجموعات*")  
 return false
 end
 
 if text == ("اضف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and DevTiMoRDev(msg) then
 function Function_TiMoRDev(extra, result, success)
 database:sadd(bot_id.."TiMoRDev:Sudo:User", result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم ترقيته مطور في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم ترقيته مطور في البوت*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false 
@@ -2592,13 +2584,13 @@ local username = text:match("^اضف مطور @(.*)$")
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"*ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه *")   
 return false 
 end      
 database:sadd(bot_id.."TiMoRDev:Sudo:User", result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم ترقيته مطور في البوت")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم ترقيته مطور في البوت*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2607,13 +2599,13 @@ end
 if text and text:match("^اضف مطور (%d+)$") and DevTiMoRDev(msg) then
 local userid = text:match("^اضف مطور (%d+)$")
 database:sadd(bot_id.."TiMoRDev:Sudo:User", userid)
-Reply_Status(msg,userid,"reply","ܛ تم ترقيته مطور في البوت")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم ترقيته مطور في البوت*")  
 return false 
 end
 if text == ("حذف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and DevTiMoRDev(msg) then
 function Function_TiMoRDev(extra, result, success)
 database:srem(bot_id.."TiMoRDev:Sudo:User", result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من المطورين")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم تنزيله من المطورين*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false 
@@ -2623,9 +2615,9 @@ local username = text:match("^حذف مطور @(.*)$")
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiMoRDev:Sudo:User", result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم تنزيله من المطورين")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم تنزيله من المطورين*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2634,7 +2626,7 @@ end
 if text and text:match("^حذف مطور (%d+)$") and DevTiMoRDev(msg) then
 local userid = text:match("^حذف مطور (%d+)$")
 database:srem(bot_id.."TiMoRDev:Sudo:User", userid)
-Reply_Status(msg,userid,"reply","ܛ تم تنزيله من المطورين")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم تنزيله من المطورين*")  
 return false 
 end
 
@@ -2644,13 +2636,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 database:sadd(bot_id.."TiMoRDev:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم ترقيته منشئ اساسي")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم ترقيته منشئ اساسي*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -2661,7 +2653,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -2669,13 +2661,13 @@ local username = text:match("^رفع منشئ اساسي @(.*)$")
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"*ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه *")   
 return false 
 end      
 database:sadd(bot_id.."TiMoRDev:Basic:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم ترقيته منشئ اساسي")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم ترقيته منشئ اساسي*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2687,13 +2679,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
 database:sadd(bot_id.."TiMoRDev:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","ܛ تم ترقيته منشئ اساسي")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم ترقيته منشئ اساسي*")  
 return false
 end
 if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then  
@@ -2702,13 +2694,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 database:srem(bot_id.."TiMoRDev:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من المنشئين")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم تنزيله من المنشئين*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -2719,7 +2711,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -2728,9 +2720,9 @@ function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiMoRDev:Basic:Constructor"..msg.chat_id_, result.id_)
 
-Reply_Status(msg,result.id_,"reply","ܛ تم تنزيله من المنشئين")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم تنزيله من المنشئين*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2742,13 +2734,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
 database:srem(bot_id.."TiMoRDev:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","ܛ تم تنزيله من المنشئين")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم تنزيله من المنشئين*")  
 return false
 end
 
@@ -2758,13 +2750,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 database:sadd(bot_id.."TiMoRDev:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم ترقيته منشئ في المجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم ترقيته منشئ في المجموعه*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 end
@@ -2774,7 +2766,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -2782,13 +2774,13 @@ local username = text:match("^رفع منشئ @(.*)$")
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"*ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه *")   
 return false 
 end      
 database:sadd(bot_id.."TiMoRDev:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم ترقيته منشئ في المجموعه")  
+Reply_Status(msg,result.id_,"reply","𓍯 ܛ تم ترقيته منشئ في المجموعه*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2800,18 +2792,18 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local userid = text:match("^رفع منشئ (%d+)$")
 database:sadd(bot_id.."TiMoRDev:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","ܛ تم ترقيته منشئ في المجموعه")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم ترقيته منشئ في المجموعه*")  
 end
 if text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then
 function Function_TiMoRDev(extra, result, success)
 database:srem(bot_id.."TiMoRDev:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من المنشئين")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم تنزيله من المنشئين*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 end
@@ -2822,7 +2814,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -2830,9 +2822,9 @@ local username = text:match("^تنزيل منشئ @(.*)$")
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiMoRDev:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم تنزيله من المنشئين")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم تنزيله من المنشئين*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2844,13 +2836,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local userid = text:match("^تنزيل منشئ (%d+)$")
 database:srem(bot_id.."TiMoRDev:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","ܛ تم تنزيله من المنشئين")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم تنزيله من المنشئين*")  
 end
 
 if text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then  
@@ -2859,13 +2851,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 database:sadd(bot_id.."TiMoRDev:Manager"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم ترقيته مدير المجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم ترقيته مدير المجموعه*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -2876,7 +2868,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -2888,9 +2880,9 @@ send(msg.chat_id_,msg.id_,"ܛ عذرا عزيزي المستخدم هاذا مع
 return false 
 end      
 database:sadd(bot_id.."TiMoRDev:Manager"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم ترقيته مدير المجموعه")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم ترقيته مدير المجموعه*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2903,13 +2895,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local userid = text:match("^رفع مدير (%d+)$") 
 database:sadd(bot_id.."TiMoRDev:Manager"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","ܛ تم ترقيته مدير المجموعه")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم ترقيته مدير المجموعه*")  
 return false
 end  
 if text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then  
@@ -2918,13 +2910,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 database:srem(bot_id.."TiMoRDev:Manager"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من المدراء")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم تنزيله من المدراء*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -2935,7 +2927,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -2943,9 +2935,9 @@ local username = text:match("^تنزيل مدير @(.*)$")
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiMoRDev:Manager"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم تنزيله من المدراء")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم تنزيله من المدراء*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -2957,13 +2949,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local userid = text:match("^تنزيل مدير (%d+)$") 
 database:srem(bot_id.."TiMoRDev:Manager"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","ܛ تم تنزيله من المدراء")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم تنزيله من المدراء*")  
 return false
 end
 
@@ -2973,17 +2965,17 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين*')
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 database:sadd(bot_id.."TiMoRDev:Mod:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم ترقيته ادمن للمجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم ترقيته ادمن للمجموعه*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -2994,25 +2986,25 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local username = text:match("^رفع ادمن @(.*)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين*')
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"*ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه *")   
 return false 
 end      
 database:sadd(bot_id.."TiMoRDev:Mod:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم ترقيته ادمن للمجموعه")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم ترقيته ادمن للمجموعه*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -3024,17 +3016,17 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local userid = text:match("^رفع ادمن (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين*')
 return false
 end
 database:sadd(bot_id.."TiMoRDev:Mod:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","ܛ تم ترقيته ادمن للمجموعه")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم ترقيته ادمن للمجموعه*")  
 return false
 end
 if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then  
@@ -3043,13 +3035,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 database:srem(bot_id.."TiMoRDev:Mod:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من ادمنيه المجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم تنزيله من ادمنيه المجموعه*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -3060,7 +3052,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -3068,9 +3060,9 @@ local username = text:match("^تنزيل ادمن @(.*)$")
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiMoRDev:Mod:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم تنزيله من ادمنيه المجموعه")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم تنزيله من ادمنيه المجموعه*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -3082,13 +3074,13 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local userid = text:match("^تنزيل ادمن (%d+)$")
 database:srem(bot_id.."TiMoRDev:Mod:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","ܛ تم تنزيله من ادمنيه المجموعه")  
+Reply_Status(msg,userid,"reply","*𓍯 ܛ تم تنزيله من ادمنيه المجموعه*")  
 return false
 end
 
@@ -3098,17 +3090,17 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين*')
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 database:sadd(bot_id.."TiMoRDev:Special:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم ترقيته مميز للمجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم ترقيته مميز للمجموعه*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -3119,25 +3111,25 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 local username = text:match("^رفع مميز @(.*)$") 
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين*')
 return false
 end
 function Function_TiMoRDev(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"*ܛ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه *")   
 return false 
 end      
 database:sadd(bot_id.."TiMoRDev:Special:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","ܛ تم ترقيته مميز للمجموعه")  
+Reply_Status(msg,result.id_,"reply","*𓍯 ܛ تم ترقيته مميز للمجموعه*")  
 else
-send(msg.chat_id_, msg.id_,"ܛ لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -3156,7 +3148,7 @@ return false
 end
 local userid = text:match("^رفع مميز (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين*')
 return false
 end
 database:sadd(bot_id.."TiMoRDev:Special:User"..msg.chat_id_, userid)
@@ -3176,7 +3168,7 @@ return false
 end
 function Function_TiMoRDev(extra, result, success)
 database:srem(bot_id.."TiMoRDev:Special:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","ܛ تم تنزيله من المميزين")  
+Reply_Status(msg,result.sender_user_id_,"reply","*𓍯 ܛ تم تنزيله من المميزين*")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiMoRDev, nil)
 return false
@@ -5535,11 +5527,11 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 owner_id = admins[i].user_id_
 tdcli_function ({ID = "GetUser",user_id_ = owner_id},function(arg,b) 
 if b.first_name_ == false then
-send(msg.chat_id_, msg.id_,"ܛ  حساب المنشئ محذوف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ  حساب المنشئ محذوف*")
 return false  
 end
 local UserName = (b.username_ or "TiMoRDevTEAM")
-send(msg.chat_id_, msg.id_,"ܛ منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ منشئ المجموعه ⋙ * ["..b.first_name_.."](T.me/"..UserName..")")  
 end,nil)   
 end
 end
@@ -5555,11 +5547,11 @@ end
 end
 tdcli_function ({ID = "GetUser",user_id_ = owner_id},function(arg,b) 
 if b.first_name_ == false then
-send(msg.chat_id_, msg.id_,"ܛ حساب المنشئ محذوف")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ حساب المنشئ محذوف*")
 return false  
 end
 local UserName = (b.username_ or "TiMoRDevTEAM")
-send(msg.chat_id_, msg.id_,"ܛ تم ترقية منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ تم ترقية منشئ المجموعه ⋙ *["..b.first_name_.."](T.me/"..UserName..")")  
 database:sadd(bot_id.."TiMoRDev:Basic:Constructor"..msg.chat_id_,b.id_)
 end,nil)   
 end,nil)   
@@ -5568,7 +5560,7 @@ end
 if text == "غادر" then 
 if DevBot(msg) and not database:get(bot_id.."TiMoRDev:Left:Bot"..msg.chat_id_) then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
-send(msg.chat_id_, msg.id_,"ܛ  تم مغادرة المجموعه") 
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ  تم مغادرة المجموعه*") 
 database:srem(bot_id.."TiMoRDev:Chek:Groups",msg.chat_id_)  
 end
 return false  
@@ -5577,20 +5569,20 @@ if text and text:match("^غادر (-%d+)$") then
 local GP_ID = {string.match(text, "^(غادر) (-%d+)$")}
 if DevBot(msg) and not database:get(bot_id.."TiMoRDev:Left:Bot"..msg.chat_id_) then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=GP_ID[2],user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
-send(msg.chat_id_, msg.id_,"ܛ  تم مغادرة المجموعه") 
-send(GP_ID[2], 0,"ܛ  تم مغادرة المجموعه بامر من مطور البوت") 
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ  تم مغادرة المجموعه*") 
+send(GP_ID[2], 0,"*𓍯 ܛ  تم مغادرة المجموعه بامر من مطور البوت*") 
 database:srem(bot_id.."TiMoRDev:Chek:Groups",GP_ID[2])  
 return false 
 end
 end
 if text == "تفعيل المغادره" and DevTiMoRDev(msg) then   
 database:del(bot_id.."TiMoRDev:Left:Bot"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"ܛ تم تفعيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ تم تفعيل مغادرة البوت*") 
 return false 
 end
 if text == "تعطيل المغادره" and DevTiMoRDev(msg) then  
 database:set(bot_id.."TiMoRDev:Left:Bot"..msg.chat_id_,true)   
-send(msg.chat_id_, msg.id_, "ܛ تم تعطيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_, "*𓍯 ܛ تم تعطيل مغادرة البوت*") 
 return false 
 end
 if text == (database:get(bot_id.."TiMoRDev:Name:Bot") or "تيمور") then
@@ -5599,21 +5591,21 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 Namebot = (database:get(bot_id.."TiMoRDev:Name:Bot") or "تيمور")
 local namebot = {
-"عافيت"..Namebot.. " كول حبي🙂💕 ",
-'تفضل يورد 🌝💞',
-'ها يحلو كول♥︎',
-'ههااااااا 😂😶',
-'الو الو 😂❤️',
-'دعبل داخابر؟ 🙂 🦇 ',
-'هها شتريد ☹️💘',
-'حبيبي القميل كول 🥺💘',
-" هايروحي؟ "..Namebot,
+"*عافيت"..Namebot.. " كول حبي🙂💕 *",
+'*تفضل يورد 🌝💞*',
+'*ها يحلو كول♥︎*',
+'*ههااااااا 😂😶*',
+'*الو الو 😂❤️*',
+'*دعبل داخابر؟ 🙂 🦇 *',
+'*هها شتريد ☹️💘*',
+'*حبيبي القميل كول 🥺💘*',
+' هايروحي؟ "..Namebot',
 }
 name = math.random(#namebot)
 send(msg.chat_id_, msg.id_, namebot[name]) 
@@ -5622,12 +5614,12 @@ end
 
 if text == "بوت" then
 Namebot = (database:get(bot_id.."TiMoRDev:Name:Bot") or "تيمور")
-send(msg.chat_id_, msg.id_,"اسمي الورد ["..Namebot.."] ") 
+send(msg.chat_id_, msg.id_,"*اسمي الورد "..Namebot.."*") 
 end
 if text == "تغير اسم البوت" or text == "تغيير اسم البوت" or text == "حذف اسم البوت" then 
 if DevTiMoRDev(msg) then
 database:setex(bot_id.."TiMoRDev:Set:Name:Bot"..msg.sender_user_id_,300,true) 
-send(msg.chat_id_, msg.id_,"ܛ  ارسل لي الاسم الان ")  
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ  ارسل لي الاسم الان *")  
 end
 return false
 end
@@ -5635,7 +5627,7 @@ end
 if text ==("مسح المطرودين") and Addictive(msg) then    
 local function delbans(extra, result)  
 if not msg.can_be_deleted_ == true then  
-send(msg.chat_id_, msg.id_, "ܛ  يرجى ترقيتي ادمن هنا") 
+send(msg.chat_id_, msg.id_, "*𓍯 ܛ  يرجى ترقيتي ادمن هنا*") 
 return false
 end  
 local num = 0 
@@ -5643,13 +5635,13 @@ for k,y in pairs(result.members_) do
 num = num + 1  
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = y.user_id_, status_ = { ID = "ChatMemberStatusLeft"}, }, dl_cb, nil)  
 end  
-send(msg.chat_id_, msg.id_,"ܛ  تم الغاء الحظر عن *~ "..num.." ~* اشخاص ") 
+send(msg.chat_id_, msg.id_,"*ܛ  تم الغاء الحظر عن ⋙ "..num.." 𓍯 اشخاص* ") 
 end    
 tdcli_function({ID="GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersKicked"},offset_ = 0,limit_ = 200}, delbans, {chat_id_ = msg.chat_id_, msg_id_ = msg.id_})    
 end
 if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and DevBot(msg) then 
 if database:get(bot_id.."TiMoRDev:Status:Bc") and not DevTiMoRDev(msg) then 
-send(msg.chat_id_, msg.id_,"ܛ الاذاعه معطله من قبل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ الاذاعه معطله من قبل المطور الاساسي*")
 return false
 end
 database:setex(bot_id.."TiMoRDev:TiMoRDev:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
@@ -5997,8 +5989,8 @@ Num_Flood = database:hget(bot_id.."TiMoRDev:flooding:settings:"..msg.chat_id_,"f
 local text = 
 "*\nܛ ااعدادات المجموعه "..
 "\n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ "..
-"\n🔏┇علامة ال {✓} تعني مفعل"..
-"\n🔓┇علامة ال {✘} تعني معطل"..
+"\nܛ علامة ال {✓} تعني مفعل"..
+"\nܛ علامة ال {✘} تعني معطل"..
 "\n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ "..
 "\nܛ الروابط ⋙ "..lock_links..
 "\n".."ܛ المعرفات ⋙ "..lock_user..
@@ -6038,7 +6030,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -6051,7 +6043,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -6065,7 +6057,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -6078,7 +6070,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -6091,7 +6083,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -6104,12 +6096,12 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 database:set(bot_id..'TiMoRDev:Lock:ID:Bot:Photo'..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,'ܛ تم تعطيل الايدي بالصوره') 
+send(msg.chat_id_, msg.id_,'*𓍯 ܛ تم تعطيل الايدي بالصوره*') 
 end
 if text == 'تعين الايدي' and Owner(msg) then
 if AddChannel(msg.sender_user_id_) == false then
@@ -6117,7 +6109,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -6142,20 +6134,20 @@ end
 if text == 'حذف الايدي' or text == 'مسح الايدي' then
 if Owner(msg) then
 database:del(bot_id.."TiMoRDev:Klesh:Id:Bot"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 'ܛ تم ازالة كليشة الايدي ')
+send(msg.chat_id_, msg.id_, '*ܛ تم ازالة كليشة الايدي *')
 end
 return false  
 end 
 
 if database:get(bot_id.."TiMoRDev:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-send(msg.chat_id_, msg.id_,"ܛ تم الغاء تعين الايدي") 
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ تم الغاء تعين الايدي*") 
 database:del(bot_id.."TiMoRDev:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
 database:del(bot_id.."TiMoRDev:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) 
 database:set(bot_id.."TiMoRDev:Klesh:Id:Bot"..msg.chat_id_,text:match("(.*)"))
-send(msg.chat_id_, msg.id_,'ܛ تم تعين الايدي')    
+send(msg.chat_id_, msg.id_,'*𓍯 ܛ تم تعين الايدي*')    
 end
 
 if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'TiMoRDev:Lock:ID:Bot'..msg.chat_id_) then
@@ -6204,7 +6196,7 @@ else
 sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,'ܛ '..Description..'\nܛ ايديك ⋙ '..Id..'\nܛ معرفك ⋙ '..UserName_User..'\nܛ رتبتك ⋙ '..Status_Gps..'\nܛ رسائلك ⋙ '..NumMsg..'\nܛ السحكات ⋙ '..message_edit..' \nܛ تتفاعلك ⋙ '..TotalMsg..'\nܛ  مجوهراتك ⋙ '..Num_Games)
 end
 else
-send(msg.chat_id_, msg.id_,'🎇┇ليس لديك صوره \n'..'\n*ܛ ايديك ⋙ '..Id..'\nܛ معرفك ⋙* ['..UserName_User..']*\nܛ رتبتك ⋙ '..Status_Gps..'\nܛ رسائلك ⋙ '..NumMsg..'\nܛ السحكات ⋙ '..message_edit..' \nܛ تتفاعلك ⋙ '..TotalMsg..'\nܛ  مجوهراتك ⋙ '..Num_Games..'*') 
+send(msg.chat_id_, msg.id_,'ܛ ليس لديك صوره \n'..'\n*ܛ ايديك ⋙ '..Id..'\nܛ معرفك ⋙* ['..UserName_User..']*\nܛ رتبتك ⋙ '..Status_Gps..'\nܛ رسائلك ⋙ '..NumMsg..'\nܛ السحكات ⋙ '..message_edit..' \nܛ تتفاعلك ⋙ '..TotalMsg..'\nܛ  مجوهراتك ⋙ '..Num_Games..'*') 
 end
 else
 if get_id then
@@ -6229,7 +6221,7 @@ end
 end
 if text and text:match('^تنظيف (%d+)$') and Addictive(msg) then    
 local Number = tonumber(text:match('^تنظيف (%d+)$')) 
-if Number > 1000 then 
+if Number > 1000then 
 send(msg.chat_id_, msg.id_,'ܛ لا تستطيع تنضيف اكثر من *~ 1000* رساله') 
 return false  
 end  
@@ -6245,7 +6237,7 @@ if text == 'ايدي' and tonumber(msg.reply_to_message_id_) > 0 and not databas
 function Function_TiMoRDev(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 if data.first_name_ == false then
-send(msg.chat_id_, msg.id_,'ܛ  الحساب محذوف لا توجد معلوماته ')
+send(msg.chat_id_, msg.id_,'*𓍯 ܛ  الحساب محذوف لا توجد معلوماته *')
 return false
 end
 if data.username_ then
@@ -6284,10 +6276,10 @@ local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local message_edit = database:get(bot_id..'TiMoRDev:message_edit'..msg.chat_id_..data.id_) or 0
 local Num_Games = database:get(bot_id.."Tshak:Msg_User"..msg.chat_id_..":"..data.id_) or 0
 local Add_Mem = database:get(bot_id.."TiMoRDev:Add:Memp"..msg.chat_id_..":"..data.id_) or 0
-send(msg.chat_id_, msg.id_,'*ܛ ايديه - '..Id..'\nܛ رسائله - '..NumMsg..'\nܛ معرفه - *['..UserName_User..']*\nܛ تفاعله - '..TotalMsg..'\nܛ رتبته - '..Status_Gps..'\n⚡┇تعديلاته - '..message_edit..'\nܛ جهاته - '..Add_Mem..'*') 
+send(msg.chat_id_, msg.id_,'*ܛ ايديه - '..Id..'\nܛ رسائله - '..NumMsg..'\nܛ معرفه - *['..UserName_User..']*\nܛ تفاعله - '..TotalMsg..'\nܛ رتبته - '..Status_Gps..'\nܛ تعديلاته - '..message_edit..'\nܛ جهاته - '..Add_Mem..'*') 
 end,nil)   
 else
-send(msg.chat_id_, msg.id_,'ܛ لا يوجد حساب بهاذا المعرف')
+send(msg.chat_id_, msg.id_,'*𓍯 ܛ لا يوجد حساب بهاذا المعرف*')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiMoRDev, nil)
@@ -6299,7 +6291,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'ܛ  لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ܛ  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'*ܛ لا تستطيع استخدام البوت 𓍯\nܛ يرجى الاشتراك في القناة 𓍯\nܛ حتى يمكن  استخدام البوت 𓍯\nܛ اشترك هنا *𓍯 ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end

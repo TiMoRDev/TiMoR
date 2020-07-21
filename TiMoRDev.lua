@@ -5604,7 +5604,7 @@ return false
 end
 Namebot = (database:get(bot_id.."TiMoRDev:Name:Bot") or "تيمور")
 local namebot = {
-"*عافيت"..Namebot.. " كول حبي🙂💕 *",
+"*عافيت "..Namebot.. " كول حبي🙂💕 *",
 '*تفضل يورد 🌝💞*',
 '*ها يحلو كول♥︎*',
 '*ههااااااا 😂😶*',
@@ -5612,7 +5612,7 @@ local namebot = {
 '*دعبل داخابر؟ 🙂 🦇 *',
 '*هها شتريد ☹️💘*',
 '*حبيبي القميل كول 🥺💘*',
-' هايروحي؟ "..Namebot',
+'*ععمريي تفضل 🙇🏿‍♂️💕*',
 }
 name = math.random(#namebot)
 send(msg.chat_id_, msg.id_, namebot[name]) 
@@ -7325,13 +7325,13 @@ end
 return false
 end
 Text = [[
-𓍯 𝙎𝙤𝙪𝙧𝙘𝙚 ⋙ [𝙏𝙞𝙈𝙤𝙍 ](t.me/TimorCil)ܛ
+𖠢 𝙎𝙤𝙪𝙧𝙘𝙚 ➤ 𝙏𝙞𝙈𝙤𝙍 〠 
 ⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤
-𓍯 𝙎𝙤𝙪𝙧𝙘𝙚 ⋙ [𝘾𝙝𝙖𝙣𝙣𝙚𝙡 ](t.me/TimorCil)ܛ
-𓍯 𝙏𝙝𝙚 ⋙ [𝘾𝙤𝙣𝙏𝙞𝙣𝙪𝙚𝙖 ](t.me/TimorCil)ܛ
-𓍯 𝙁𝙞𝙡𝙚𝙨 ⋙ [𝙎𝙤𝙪𝙧𝙘𝙚 ](t.me/TimorCil)ܛ
+𖠢 𝙎𝙤𝙪𝙧𝙘𝙚 ➤ [𝘾𝙝𝙖𝙣𝙣𝙚𝙡 ](https://t.me/TiMoRcil/8)ܛ
+𖠢 𝙏𝙝𝙚 ➤ [𝘾𝙤𝙣𝙏𝙞𝙣𝙪𝙚𝙖 ](https://t.me/TiMoRcil/8)ܛ
+𖠢 𝙁𝙞𝙡𝙚𝙨 ➤ [𝙎𝙤𝙪𝙧𝙘𝙚 ](t.me/TimorCil)ܛ
 ⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤
-𓍯 𝙏𝙬𝙖𝙨𝙡 ⋙ [𝙏𝙞𝙈𝙤𝙍 ](t.me/Y_8ibot)ܛ
+𖠢 𝙏𝙬𝙖𝙨𝙡 ➤ [𝙏𝙞𝙈𝙤𝙍 ](t.me/Y_8ibot)ܛ
 ]]
 send(msg.chat_id_, msg.id_,Text)
 end
@@ -7810,22 +7810,21 @@ end
 if DevTiMoRDev(msg) then
 local Text = '*ܛ مرحبا عزيزي المطور آلاساسي 𓍯\nܛ يمكنك اختيار الامر من الكيبورد 𓍯\nܛ اضغط على الأمر الذي تـريده 𓍯\nܛ 𓍯 Ch ⋙ @TiMoRciL*'
 local keyboard = {
-{'الاحصائيات 📊'},
-{'تفعيل التواصل ⚡','تعطيل التواصل 🔰'},
-{'تنظيف الكروبات ℹ','تنظيف المشتركين ♠'},
-{'تفعيل البوت الخدمي 💠','تعطيل البوت الخدمي 📛'},
-{'اذاعه خاص 📡','المطورين 🔱','اذاعه 📡'},
+{'تفعيل التواصل 🔛','تعطيل التواصل ➗'},
+{'احصائيات البوت 📑'},
+{'تنظيف الكروبات 🔰','تنظيف المشتركين 👤'},
+{'تفعيل البوت خدمي ✅','تعطيل البوت خدمي ❎'},
+{'تفعيل الاذاعه ✔️','تعطيل الاذاعه ✖️'},
+{'اذاعه خاص 🔭','المطورين 📌','اذاعه 📡'},
 {'اذاعه بالتوجيه 👥','اذاعه بالتوجيه خاص 👤'},
-{'تفعيل الاذاعه 🔔','تعطيل الاذاعه 🔕'},
-{'مسح قائمه العام 📮','مسح المطورين 🚸'},
-{'حذف كليشه ستارت 🃏','ضع كليشه ستارت 📧'},
-{'- تعطيل الاشتراك الاجباري 📄 .'},
-{'- تغير الاشتراك 🧾 .','حذف رساله الاشتراك ℹ .'},
-{'- تفعيل الاشتراك الاجباري 📄 .'},
-{'- الاشتراك الاجباري 📮 .'},
-{'- تعين قناة الاشتراك 📁 .','- تغير رساله الاشتراك 🧾 .'},
-{'تحديث السورس 📥','تحديث ♻'},
+{'حذف كليشه ستارت 🃏','تغير كليشه ستارت 🆕'},
+{'الاشتراك الاجباري 📤'},
+{'تفعيل الاشتراك 🔔','تعطيل الاشتراك 🔕'},
+{'تغير الاشتراك 📃','حذف رساله الاشتراك 🔌'},
+{'تعين قناة الاشتراك 📭','تغير رساله الاشتراك 🖇️'},
+{'تحديث السورس 🔂','تحديث الملفات 🔁'},
 {'قائمه العام 🚷'},
+{'مسح قائمه العام 📮','مسح المطورين 🚸'},
 {'جلب نسخه احتياطيه 📁'},
 {'الغاء ✖'}
 }
@@ -7896,20 +7895,20 @@ end
 sendText(Id_Sudo,Text..'\n'..'ܛ  ~ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')',0,'md') 
 end,nil);end,nil);end,nil);end,nil);end 
 if DevTiMoRDev(msg) then
-if text == 'تفعيل التواصل ⚡' then  
+if text == 'تفعيل التواصل 🔛' then  
 database:del(bot_id..'Texting:In:Bv') 
 send(msg.chat_id_, msg.id_,'*𓍯 ܛ  تم تفعيل التواصل *') 
 end
-if text == 'تعطيل التواصل 🔰' then  
+if text == 'تعطيل التواصل ➗' then  
 database:set(bot_id..'Texting:In:Bv',true) 
 send(msg.chat_id_, msg.id_,'*𓍯 ܛ  تم تعطيل التواصل *') 
 end
-if text =='الاحصائيات 📊' then
+if text =='احصائيات البوت 📑' then
 local Groups = database:scard(bot_id..'TiMoRDev:Chek:Groups')  
 local Users = database:scard(bot_id..'TiMoRDev:UsersBot')  
 send(msg.chat_id_, msg.id_,'*ܛ احصائيات البوت \n\nܛ عدد المجموعات ⋙ '..Groups..'\nܛ عدد المشتركين ⋙ '..Users..'*')
 end
-if text == "تنظيف المشتركين ♠" then
+if text == "تنظيف المشتركين 👤" then
 local pv = database:smembers(bot_id..'TiMoRDev:UsersBot')  
 local sendok = 0
 for i = 1, #pv do
@@ -7935,7 +7934,7 @@ end,nil)
 end
 return false
 end
-if text == "تنظيف الكروبات ℹ" then
+if text == "تنظيف الكروبات 🔰" then
 local group = database:smembers(bot_id..'TiMoRDev:Chek:Groups')  
 local w = 0
 local q = 0
@@ -7984,15 +7983,15 @@ end,nil)
 end
 return false
 end
-if text == 'تفعيل البوت الخدمي 💠' then
+if text == 'تفعيل البوت خدمي ✅' then
 database:del(bot_id..'TiMoRDev:Free:Add:Bots') 
 send(msg.chat_id_, msg.id_,'\n*𓍯 ܛ تم تفعيل البوت الخدمي *') 
 end
-if text == 'تعطيل البوت الخدمي 📛' then
+if text == 'تعطيل البوت خدمي ❎' then
 database:set(bot_id..'TiMoRDev:Free:Add:Bots',true) 
 send(msg.chat_id_, msg.id_,'\n*𓍯 ܛ تم تعطيل البوت الخدمي*') 
 end
-if text=="اذاعه خاص 📡" and msg.reply_to_message_id_ == 0 then
+if text=="اذاعه خاص 🔭" and msg.reply_to_message_id_ == 0 then
 if database:get(bot_id.."TiMoRDev:Status:Bc") and not DevTiMoRDev(msg) then 
 send(msg.chat_id_, msg.id_,"*𓍯 ܛ الاذاعه معطله من قبل المطور الاساسي*")
 return false
@@ -8028,12 +8027,12 @@ database:setex(bot_id.."TiMoRDev:TiMoRDev:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.
 send(msg.chat_id_, msg.id_,"*𓍯 ܛ ارسل لي التوجيه الان*") 
 return false
 end 
-if text == "تفعيل الاذاعه 🔔" then
+if text == "تفعيل الاذاعه ✔️" then
 database:del(bot_id.."TiMoRDev:Status:Bc") 
 send(msg.chat_id_, msg.id_,"\n*𓍯 ܛ تم تفعيل الاذاعه *" ) 
 return false
 end 
-if text == "تعطيل الاذاعه 🔕" then
+if text == "تعطيل الاذاعه ✖️" then
 database:set(bot_id.."TiMoRDev:Status:Bc",true) 
 send(msg.chat_id_, msg.id_,"\n*𓍯 ܛ تم تعطيل الاذاعه*") 
 return false
@@ -8059,7 +8058,7 @@ send(msg.chat_id_, msg.id_,'*𓍯 ܛ تم حفظ كليشه ستارت*')
 database:del(bot_id..'Start:Bots') 
 return false
 end
-if text == 'ضع كليشه ستارت 📧' then
+if text == 'تغير كليشه ستارت 🆕' then
 database:set(bot_id..'Start:Bots',true) 
 send(msg.chat_id_, msg.id_,'*𓍯 ܛ ارسل لي الكليشه الان*') 
 return false
@@ -8068,27 +8067,27 @@ if text == 'حذف كليشه ستارت 🃏' then
 database:del(bot_id..'Start:Bot') 
 send(msg.chat_id_, msg.id_,'*𓍯 ܛ تم حذف كليشه ستارت*') 
 end
-if text and text:match("^- تغير الاشتراك 🧾 .$") and DevTiMoRDev(msg) then  
+if text and text:match("^تغير الاشتراك 📃$") and DevTiMoRDev(msg) then  
 database:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, '*𓍯 ܛ حسنآ ارسل لي معرف القناة*')
 return false  
 end
-if text and text:match("^- تغير رساله الاشتراك 🧾 .$") and DevTiMoRDev(msg) then  
+if text and text:match("^تغير رساله الاشتراك 🖇️$") and DevTiMoRDev(msg) then  
 database:setex(bot_id.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, '*𓍯 ܛ حسنآ ارسل لي النص الذي تريده*')
 return false  
 end
-if text == "حذف رساله الاشتراك ℹ ." and DevTiMoRDev(msg) then  
+if text == "حذف رساله الاشتراك 🔌" and DevTiMoRDev(msg) then  
 database:del(bot_id..'text:ch:user')
 send(msg.chat_id_, msg.id_, "*𓍯 ܛ تم مسح رساله الاشتراك*")
 return false  
 end
-if text and text:match("^- تعين قناة الاشتراك 📁 .$") and DevTiMoRDev(msg) then  
+if text and text:match("^تعين قناة الاشتراك 📭$") and DevTiMoRDev(msg) then  
 database:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, '*𓍯 ܛ حسنآ ارسل لي معرف القناة*')
 return false  
 end
-if text == "- تفعيل الاشتراك الاجباري 📄 ." and DevTiMoRDev(msg) then  
+if text == "تفعيل الاشتراك 🔔" and DevTiMoRDev(msg) then  
 if database:get(bot_id..'add:ch:id') then
 local addchusername = database:get(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_,"*𓍯 ܛ الاشتراك الاجباري مفعل \nܛ على القناة𓍯 ⋙ * ["..addchusername.."]")
@@ -8098,13 +8097,13 @@ send(msg.chat_id_, msg.id_,"*𓍯 ܛ اهلا عزيزي المطور \n𓍯 ܛ 
 end
 return false  
 end
-if text == "- تعطيل الاشتراك الاجباري 📄 ." and DevTiMoRDev(msg) then  
+if text == "تعطيل الاشتراك 🔕" and DevTiMoRDev(msg) then  
 database:del(bot_id..'add:ch:id')
 database:del(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_, "*𓍯 ܛ تم تعطيل الاشتراك الاجباري *")
 return false  
 end
-if text == "- الاشتراك الاجباري 📮 ." and DevTiMoRDev(msg) then  
+if text == "الاشتراك الاجباري 📤" and DevTiMoRDev(msg) then  
 if database:get(bot_id..'add:ch:username') then
 local addchusername = database:get(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_, "*𓍯 ܛ تم تفعيل الاشتراك الاجباري \n ܛ على القناة 𓍯⋙*  ["..addchusername.."]")
@@ -8181,7 +8180,7 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text == ("المطورين 🔱") and DevTiMoRDev(msg) then
+if text == ("المطورين 📌") and DevTiMoRDev(msg) then
 local list = database:smembers(bot_id.."TiMoRDev:Sudo:User")
 t = "\n*𓍯 ܛ قائمة مطورين البوت*\n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤\n"
 for k,v in pairs(list) do
@@ -8263,7 +8262,7 @@ File:write(t)
 File:close()
 sendDocument(msg.chat_id_, msg.id_,'./File_Libs/'..bot_id..'.json', 'ܛ  عدد مجموعات التي في البوت { '..#list..'}')
 end
-if text == "تحديث السورس 📥" then
+if text == "تحديث السورس 🔂" then
 send(msg.chat_id_,msg.id_,'*𓍯 ܛ تم تحديث السورس*')
 os.execute('rm -rf TiMoRDev.lua')
 os.execute('rm -rf start.lua')
@@ -8272,7 +8271,7 @@ os.execute('wget https://raw.githubusercontent.com/TiMoRDev/TiMoRDev/master/star
 dofile('TiMoRDev.lua')  
 return false
 end
-if text == "تحديث ♻" then
+if text == "تحديث الملفات 🔁" then
 dofile("TiMoRDev.lua")  
 send(msg.chat_id_, msg.id_, "*𓍯 ܛ تم تحديث الملفات*")
 end

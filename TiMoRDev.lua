@@ -5134,7 +5134,7 @@ return false
 end
 function Function_TiMoRDev(extra, result, success)
 if tonumber(SUDO) == tonumber(result.sender_user_id_) then
-send(msg.chat_id_, msg.id_,"ܛ  لا تستطيع تنزيل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"*𓍯 ܛ  لا تستطيع تنزيل المطور الاساسي*")
 return false 
 end
 if database:sismember(bot_id.."TiMoRDev:Sudo:User",result.sender_user_id_) then
@@ -5151,9 +5151,9 @@ if database:sismember(bot_id.."TiMoRDev:Special:User"..msg.chat_id_, result.send
 vip = "مميز ،" else vip = ""
 end
 if Rank_Checking(result.sender_user_id_,msg.chat_id_) ~= false then
-send(msg.chat_id_, msg.id_,"\nܛ تم تنزيل الشخص من الرتب التاليه \nܛ  { "..dev..""..crr..""..cr..""..own..""..mod..""..vip.." } \n")
+send(msg.chat_id_, msg.id_,"\n*𓍯 ܛ تم تنزيل الشخص من الرتب \nܛ { "..dev..""..crr..""..cr..""..own..""..mod..""..vip.." } 𓍯* \n")
 else
-send(msg.chat_id_, msg.id_,"\nܛ ليس لديه رتب حتى استطيع تنزيله \n")
+send(msg.chat_id_, msg.id_,"\n*𓍯 ܛ ليس لديه رتب حتى استطيع تنزيله *\n")
 end
 if tonumber(Id_Sudo) == tonumber(msg.sender_user_id_) then
 database:srem(bot_id.."TiMoRDev:Sudo:User", result.sender_user_id_)
@@ -5195,7 +5195,7 @@ end
 return false
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""), offset_ = 0,limit_ = 200},function(ta,taha)
-local t = "\n*𓍯 ܛ  قائمة الاعضاء \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤\n"
+local t = "\n*𓍯 ܛ  قائمة الاعضاء* \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤\n"
 x = 0
 local list = taha.members_
 for k, v in pairs(list) do
@@ -8433,7 +8433,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 database:incr(bot_id..'TiMoRDev:message_edit'..result.chat_id_..result.sender_user_id_)
 local Text = result.content_.text_
 if database:get(bot_id.."TiMoRDev:Lock:edit"..msg.chat_id_) and not Text and not BasicConstructor(result) then
-Reply_Status(result,result.sender_user_id_,"reply","ܛ قام بالتعديل على الميديا")  
+Reply_Status(result,result.sender_user_id_,"reply","*𓍯 ܛ قام بالتعديل على الميديا*")  
 DeleteMessage(result.chat_id_,{[0] = data.message_id_}) 
 end
 local text = result.content_.text_

@@ -4709,29 +4709,29 @@ send(msg.chat_id_, msg.id_,"*𓍯 ܛ تم مسح ردود المدير*")
 end
 if text == ("ردود المدير") and Owner(msg) then
 local list = database:smembers(bot_id.."TiMoRDev:List:Manager"..msg.chat_id_.."")
-text = "📑┇قائمه ردود المدير \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
+text = "𓍯 ܛ قائمه ردود المدير\n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
 for k,v in pairs(list) do
 if database:get(bot_id.."TiMoRDev:Add:Rd:Manager:Gif"..v..msg.chat_id_) then
-db = "متحركه 🎭"
+db = "متحركه  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Manager:Vico"..v..msg.chat_id_) then
-db = "بصمه 📢"
+db = "بصمه  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Manager:Stekrs"..v..msg.chat_id_) then
-db = "ملصق 🃏"
+db = "ملصق  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Manager:Text"..v..msg.chat_id_) then
-db = "رساله ✉"
+db = "رساله  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Manager:Photo"..v..msg.chat_id_) then
-db = "صوره 🎇"
+db = "صوره  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Manager:Video"..v..msg.chat_id_) then
-db = "فيديو 📹"
+db = "فيديو  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Manager:File"..v..msg.chat_id_) then
-db = "ملف 📁"
+db = "ملف  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Manager:Audio"..v..msg.chat_id_) then
-db = "اغنيه 🎵"
+db = "اغنيه  "
 end
-text = text..""..k..">> ("..v..") ⋙ {"..db.."}\n"
+text = text.."➤ "..k.." 𓌗 {"..v.."} 𓌗 {"..db.."}\n"
 end
 if #list == 0 then
-text = "ܛ لا يوجد ردود للمدير"
+text = "𓍯 ܛ لا يوجد ردود للمدير"
 end
 send(msg.chat_id_, msg.id_,"["..text.."]")
 end
@@ -4917,29 +4917,29 @@ send(msg.chat_id_, msg.id_,"*𓍯 ܛ تم مسح ردود المطور*")
 end
 if text == ("ردود المطور") and DevTiMoRDev(msg) then 
 local list = database:smembers(bot_id.."TiMoRDev:List:Rd:Sudo")
-text = "\n*𓍯 ܛ قائمة ردود المطور \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n*"
+text = "\n𓍯 ܛ قائمة ردود المطور\n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤ \n"
 for k,v in pairs(list) do
 if database:get(bot_id.."TiMoRDev:Add:Rd:Sudo:Gif"..v) then
-db = "متحركه 🎭"
+db = "متحركه  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Sudo:vico"..v) then
-db = "بصمه 📢"
+db = "بصمه  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Sudo:stekr"..v) then
-db = "ملصق 🃏"
+db = "ملصق  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Sudo:Text"..v) then
-db = "رساله ✉"
+db = "رساله  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Sudo:Photo"..v) then
-db = "صوره 🎇"
+db = "صوره  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Sudo:Video"..v) then
-db = "فيديو 📹"
+db = "فيديو  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Sudo:File"..v) then
-db = "ملف 📁"
+db = "ملف  "
 elseif database:get(bot_id.."TiMoRDev:Add:Rd:Sudo:Audio"..v) then
-db = "اغنيه 🎵"
+db = "اغنيه  "
 end
-text = text..""..k.." >> ("..v..") ⋙ {"..db.."}\n"
+text = text.."➤ "..k.." 𓌗 {"..v.."} 𓌗 {"..db.."}\n"
 end
 if #list == 0 then
-text = "*𓍯 ܛ لا يوجد ردود للمطور*"
+text = "𓍯 ܛ لا يوجد ردود للمطور"
 end
 send(msg.chat_id_, msg.id_,"["..text.."]")
 end
@@ -5195,13 +5195,13 @@ end
 return false
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""), offset_ = 0,limit_ = 200},function(ta,taha)
-local t = "\n*𓍯 ܛ  قائمة الاعضاء* \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤\n"
+local t = "\n*𓍯  ܛ  قائمة الاعضاء* \n⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤\n"
 x = 0
 local list = taha.members_
 for k, v in pairs(list) do
 x = x + 1
 if database:get(bot_id.."TiMoRDev:User:Name"..v.user_id_) then
-t = t.."*𓍯"..x.." ⋙* {[@"..database:get(bot_id.."TiMoRDev:User:Name"..v.user_id_).."]}\n"
+t = t.."*𖠢 "..x.."  * {[@"..database:get(bot_id.."TiMoRDev:User:Name"..v.user_id_).."]}\n"
 else
 end
 end
@@ -5220,7 +5220,7 @@ end
 return false
 end
 local rtp = Get_Rank(msg.sender_user_id_,msg.chat_id_)
-send(msg.chat_id_, msg.id_,"ܛ  رتبتك في البوت ⋙ "..rtp)
+send(msg.chat_id_, msg.id_,"*ܛ  رتبتك في البوت ⋙ *"..rtp)
 end
 if text == "اسمي"  then 
 if AddChannel(msg.sender_user_id_) == false then
